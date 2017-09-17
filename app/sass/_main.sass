@@ -1,0 +1,37 @@
+body
+	font-size: 16px
+	font-family: "Open Sans"
+
+a, button
+	border: 0
+	text-decoration: none
+	color: #000
+
+.wrapper
+	max-width: 1170px
+	width: 100%
+	margin: 0 auto
+
+.align
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: space-between
+	.align-left, .align-right
+		width: 50%
+		+rmm(320, 768)
+			width: 100%
+
+.adv
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: space-between
+
+footer
+	p
+		text-align: center

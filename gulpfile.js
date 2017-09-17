@@ -1,6 +1,6 @@
 var gulp         = require('gulp'),
 		sass         = require('gulp-sass'),
-		browserSync  = require('browser-sync'),
+		browserSync  = require('browser-sync').create();
 		concat       = require('gulp-concat'),
 		uglify       = require('gulp-uglifyjs'),
 		cssnano			 = require('gulp-cssnano'),
@@ -13,6 +13,9 @@ var gulp         = require('gulp'),
 		gulp 				 = require('gulp');
 		gutil 			 = require('gulp-util');
 		ftp 				 = require('gulp-ftp');
+var webserver = require('gulp-server-livereload');
+
+
 
 
 
@@ -47,9 +50,12 @@ gulp.task('csslibs', ['sass'], function(){
 
 
 gulp.task('browser-sync', function(){
-	browserSync({
-		proxy: "portfolio/app",
-		notify: false
+	browserSync.init({
+		// proxy: "portfolio/app",
+		notify: false,
+		server: {
+			baseDir: './app/'
+		}
 	});
 });
 
